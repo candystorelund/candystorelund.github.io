@@ -15,15 +15,24 @@
 <h2 id="newsbody">Order here:</h2><br>
 <form>
 <input id="order"></input><br>
-<h2 id="NEIN">NO</h2><h2 id="YAAA">YES</h2>
-<input type="radio" name="thingsorder" value="Haribo_de_zour" id="choice1"><input type="radio" name="thingsorder" value="Haribo_de_zour_no" id="choice0.1"><h4>Haribo - De Zour</h4>
+<div id='yesno'>
+  <h4 id="NEINYAA"><span id="YAA">YES</span>|<span id="NEIN">NO</span></h4>
+</div>
+<input type="radio" name="thingsorder" value="Haribo_de_zour" id="choice1">
+<input type="radio" name="thingsorder" value="Haribo_de_zour_no" id="choice0.1" checked=>
+<h4>Haribo - De Zour</h4>
 <br>
-<input type="radio" name="thingsorder1" value="Haribo_de_zour" id="choice2"><input type="radio" name="thingsorder1" value="Haribo_de_zour_no" id="choice1.1"><h4>Haribo - De Zour</h4>
+<input type="radio" name="thingsorder1" value="Haribo_de_zour" id="choice2">
+<input type="radio" name="thingsorder1" value="Haribo_de_zour_no" id="choice1.1" checked>
+<h4>Haribo - De Zour</h4>
 <br>
-<input type="radio" name="thingsorder2" value="Haribo_de_zour" id="choice3"><input type="radio" name="thingsorder2" value="Haribo_de_zour_no" id="choice2.1"><h4>Haribo - De Zour</h4>
+<input type="radio" name="thingsorder2" value="Haribo_de_zour" id="choice3">
+<input type="radio" name="thingsorder2" value="Haribo_de_zour_no" id="choice2.1" checked>
+<h4>Haribo - De Zour</h4>
 <br>
 <input type="radio" name="thingsorder3" value="Haribo_de_zour_yes" id="choice3">
-<input type="radio" name="thingsorder3" value="Haribo_de_zour_no" id="choice3.1"><h4>Haribo - De Zour</h4>
+<input type="radio" name="thingsorder3" value="Haribo_de_zour_no" id="choice3.1" checked>
+<h4>Haribo - De Zour</h4>
 <br>
 <button id="orderbutton" onclick="order()">ORDER</button>
 </form>
@@ -49,15 +58,19 @@
   padding-bottom: 0px;
   margin-bottom: 0px;
 }
-#NEIN {
-  display: inline;
+#NEINYAA {
+  display: inline-block;
   padding: 0px;
   margin: 0px;
+  margin-right: 170px;
+  margin-top: 20px;
+  margin-bottom: -15px;
 }
-#YAA {
-  display: inline;
-  padding: 0px;
-  margin: 0px;
+#NEINYAA #YAA{
+  color: lightgreen;
+}
+#NEINYAA #NEIN {
+  color: red;
 }
 #Godis {
   font-size: 70px;
@@ -82,7 +95,7 @@
   height: 10px;
 }
 #main-wrapper {
-  height: 900px;
+  height: 850px;
   width: 100%;
   margin-top: 10px;
   background-color: #c1d4f7;
@@ -145,6 +158,8 @@ body {
   background: lightblue;
   border: 1.5px solid black;
   background-color: grey;
+  margin-top: 0px;
+  padding-top: 0px;
 }
 #choice2 {
   background: lightblue;
