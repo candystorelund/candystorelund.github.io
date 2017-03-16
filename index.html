@@ -36,10 +36,12 @@
 </div>
 <div id="beställd">
 <h1 id="headerbest">Beställningslista</h1><br>
+  <div id="saker">
 <h3 id="haribolist">Haribo De Zour</h3><h2 id="amountofharibodezour">0</h2><br><br>
 <h3 id="haribolist">Mentos Frukt</h3><h2 id="amountofmentosfrukt">0</h2><br><br>
 <h3 id="haribolist">Haribo Fladdermöss</h3><h2 id="amountofharibofladder">0</h2><br><br>
 <h3 id="haribolist">Mentos</h3><h2 id="amountofmentos">0</h2><br><br>
+  </div>
 </div>
 </center>
 </div>
@@ -77,6 +79,11 @@ function buyMentos() {
   background-color: lightgrey;
   border-radius: 7px;
 }
+#saker {
+  background-color: lightblue;
+  border-radius: 20px;
+  
+  }
 #haribolist {
  display: inline-block;
   float: center;
@@ -118,6 +125,9 @@ function buyMentos() {
   font-family: Courier;
   margin-right: 10px;
   border-radius: 10px;
+}
+*:focus {
+outline: none;
 }
 #amountofmentos {
   float: right;
