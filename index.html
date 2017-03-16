@@ -16,43 +16,137 @@
 <div id="nyheter">
 <h2 id="newsheader">Säljer i Lund, Sverige</h2><br>
 <h2 id="newsbody">Beställ här:</h2><br>
-<form action="https://formspree.io/candystorelund@gmail.com" method="POST">
 <input id="emailbox" type="email" name="email" value="candystorebot@gmail.com">
 <input id="order" name="namn:" placeholder="Namn, klass och antal"></input><br>
-<div id='yesno'>
-  <h4 id="NEINYAA"><span id="YAA">YES</span>|<span id="NEIN">NO</span></h4>
-</div>
-<input type="radio" name="Haribo - De Zour:" value="ja" id="choice1">
-<input type="radio" name="Haribo - De Zour:" value="nej" id="choice0.1" checked>
-<h4>Haribo - De Zour (5kr) SLUTSÅLD</h4>
+<h4>Haribo - De Zour (5kr)</h4>
+<button id="orderbtn" onclick="buyHariboDeZour()">+</button>
 <br>
-<input type="radio" name="FruktMentos:" value="ja" id="choice2">
-<input type="radio" name="FruktMentos:" value="nej" id="choice1.1" checked>
-<h4>Mentos Frukt (5kr/st) SLUTSÅLD</h4>
 <br>
-<input type="radio" name="Haribo - Fladdermöss (300g):" value="ja" id="choice3">
-<input type="radio" name="Haribo - Fladdermöss (300g):" value="nej" id="choice2.1" checked>
+<h4>Mentos Frukt (5kr/st)</h4>
+<button id="orderbtn" onclick="buyMentosFrukt()">+</button>
+<br>
+<br>
 <h4>Haribo - Fladdermöss (300g) (15kr)</h4>
+<button id="orderbtn" onclick="buyHariboFladdermöss()">+</button>
 <br>
-<input type="radio" name="Mentos:" value="ja" id="choice3">
-<input type="radio" name="Mentos:" value="nej" id="choice3.1" checked>
+<br>
 <h4>Mentos (5kr)</h4>
+<button id="orderbtn" onclick="buyMentos()">+</button>
 <br>
-<input type="submit" value="Beställ" name="submit" id="leswag">
-</form>
 </div>
-<div id="footer">
-<h5 id="footertext">Made with ( ͡° ͜ʖ ͡°) by Alex</h5>
-<h5 id="footertext2">© 2017 MaTriX ALL RIGHTS RESERVED</h5>
+<div id="beställd">
+<h1 id="headerbest">Beställningslista</h1><br>
+<h3 id="haribolist">Haribo De Zour</h3>
+<h2 id="amountofharibodezour">0</h2><br>
+<h3 id="haribolist">Mentos Frukt</h3><h2 id="amountofmentosfrukt">0</h2><br>
+<h3 id="haribolist">Haribo Fladdermöss</h3><h2 id="amountofharibofladder">0</h2><br>
+<h3 id="haribolist">Mentos</h3><h2 id="amountofmentos">0</h2><br>
 </div>
 </center>
 </div>
+<script>
+var haribodezouramount = 0;
+var mentosfruktamount = 0;
+
+function buyHariboDeZour() {
+  document.getElementById('amountofharibodezour').innerHTML = haribodezouramount + 1;
+  haribodezouramount++
+}
+function buyMentosFrukt() {
+  document.getElementById('amountofmentosfrukt').innerHTML = mentosfruktamount + 1;
+  mentosfruktamount++
+}
+function buyHariboFladdermöss() {
+  document.getElementById('amountofharibofladder').innerHTML = haribodezouramount + 1;
+  haribodezouramount++
+}
+function buyMentos() {
+  document.getElementById('amountofmentos').innerHTML = haribodezouramount + 1;
+  haribodezouramount++
+}
+</script>
 <style>
+#orderbtn {
+  display: inline;
+  float: right;
+  margin-right: 5px;
+  border: 1.5px solid lightgrey;
+  height: 30px;
+  width: 30px;
+  background-color: lightgrey;
+  border-radius: 7px;
+}
+#haribolist {
+  font-size: 17px;
+  float: center;
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 30px;
+  font-family: Courier;
+}
+#amountofharibodezour {
+  float: right;
+  font-size: 20px;
+  display: inline-block;
+  padding: 10px;
+  font-family: Courier;
+  background-color: lightgrey;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+#amountofmentosfrukt {
+  float: right;
+  font-size: 20px;
+  display: inline-block;
+  font-family: Courier;
+  padding: 10px;
+  background-color: lightgrey;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+#amountofharibofladder {
+  float: right;
+  font-size: 20px;
+  display: inline-block;
+  padding: 10px;
+  background-color: lightgrey;
+  font-family: Courier;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+#amountofmentos {
+  float: right;
+  font-size: 20px;
+  display: inline-block;
+  padding: 10px;
+  font-family: Courier;
+  background-color: lightgrey;
+  margin-right: 10px;
+  border-radius: 10px;
+}
 #header {
   height: 170px;
   width: 100%;
   background-color: #c57c7c;
   border-radius: 20px;
+}
+#beställd {
+  width: 40%;
+  float: right;
+  height: 700px;
+  background-color: white;
+  margin-right: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+#headerbest {
+  font-family: Courier;
+  font-size: 20px;
+  padding: 10px;
+  float: center;
+  background-color: lightgrey;
+  display: inline-block;
+  border-radius: 10px;
 }
 #knuts {
   font-size: 30px;
@@ -67,13 +161,14 @@
   background-color: lightgrey;
   border-radius: 10px;
   font-family: Courier;
+  margin-top: 200px;
 }
 #NEINYAA {
   display: inline-block;
   padding: 0px;
   margin: 0px;
   margin-right: 200px;
-  margin-left: -120px;
+  margin-left: 0px;
   margin-top: 20px;
   margin-bottom: -15px;
 }
@@ -93,6 +188,7 @@
   display: inline-block;
 }
 #footertext {
+  display: block;
   font-family: Courier;
   padding-top: 10px;
   margin-bottom: 0px;
@@ -101,6 +197,7 @@
   font-family: Courier;
   padding-top: 0px;
   margin-bottom: 0px;
+  display: block;
 }
 #space {
   height: 10px;
@@ -113,24 +210,27 @@
   border-radius: 20px;
 }
 #nyheter {
+  float: left;
   height: 700px;
-  width: 90%;
+  width: 50%;
   background-color: white;
   display: inline-block;
   margin-top: 20px;
   border-radius: 10px;
   text-align: center;
+  margin-left: 20px;
 }
 #newsheader {
-  font-size: 30px;
+  font-size: 25px;
   font-family: Courier;
   margin-top: 20px;
   background-color: lightgrey;
   display: inline-block;
-  padding: 8px;
-  padding-left: 13px;
-  padding-right: 13px;
+  padding: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
   border-radius: 10px;
+  float: center;
 }
 #candylogoyes {
   display: inline;
@@ -139,7 +239,7 @@
     display: none;
   }
   #messagebox {
-   display: none; 
+  display: none; 
   }
 #newsbody {
   display: inline-block;
@@ -157,6 +257,7 @@
   background-color: f0f0f0;
   margin-top: -3px;
   border: 2px solid black;
+  
 }
 #orderbutton {
     border: 1px solid black;
@@ -165,6 +266,9 @@
 }
 body {
   background-color: #92c4dd;
+}
+#footer {
+display: block;
 }
 #choice1 {
   background: lightblue;
@@ -211,9 +315,14 @@ body {
 }
 h4 {
   display: inline-block;
-  margin-left: 5px;
+  margin-top: 6px;
+  margin-left: 15px;
+  float: left;
   font-family: Courier;
+  font-size: 13px;
 }
 </style>
 </body>
 </html>
+
+
