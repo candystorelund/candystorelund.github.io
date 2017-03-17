@@ -17,7 +17,7 @@
 <h2 id="newsheader">Säljer i Lund, Sverige</h2><br>
 <h2 id="newsbody">Beställ här:</h2><br>
 <input id="emailbox" type="email" name="email" value="candystorebot@gmail.com">
-<input id="order" name="namn:" placeholder="Namn, klass och antal"></input><br>
+<input id="order" name="namn:" placeholder="Namn, klass och antal" oninput="setinput()"></input><br>
 <h4 style="margin-top: 20px;">Haribo - De Zour (5kr/st)</h4>
 <button id="orderbtn" onclick="buyHariboDeZour()">+</button>
 <br>
@@ -42,10 +42,11 @@
 <h3 id="haribolist">Haribo Fladdermöss</h3><h2 id="amountofharibofladder">0</h2><br><br>
 <h3 id="haribolist">Mentos Mint</h3><h2 id="amountofmentos">0</h2><br><br>
 <form action="https://formspree.io/candystorelund@gmail.com" method="POST">
-  <input class="invisible" name="HariboDeZour:" value="0st"></input>
-  <input class="invisible" name="MentosFrukt:" value="0st"></input> 
-  <input class="invisible" name="HariboFladdermus:" value="0st"></input>
-  <input class="invisible" name="Mentos:" value="0st"></input>
+  <input class="invisible" name="HariboDeZour:" id="HariboDeZour" value="0st"></input>
+  <input class="invisible" name="MentosFrukt:" id="MentosFrukt" value="0st"></input> 
+  <input class="invisible" name="HariboFladdermus:" id="HariboFladdermus" value="0st"></input>
+  <input class="invisible" name="Mentos:" id="Mentos:" value="0st"></input>
+  <input class="invisible" name="Namnklass:" id="Namnklass:" value="0st"></input>
   <input type="submit" name="submit" value="submit">
 </form>
   </div>
@@ -59,6 +60,7 @@ var haribofladdermössamount = 0;
 var mentosamount = 0;
 function buyHariboDeZour() {
   document.getElementById('amountofharibodezour').innerHTML = haribodezouramount + 1;
+  document.getElementById('HariboDeZour:').value = haribodezouramount + 1 + 'st';
   haribodezouramount++
 }
 function buyMentosFrukt() {
@@ -72,6 +74,9 @@ function buyHariboFladdermöss() {
 function buyMentos() {
   document.getElementById('amountofmentos').innerHTML = mentosamount + 1;
   mentosamount++
+}
+function setinput() {
+  document.getElemenyById('Namnklass').value = document.getElementById('order').value;
 }
 </script>
 <style>
